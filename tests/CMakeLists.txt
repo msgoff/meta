@@ -1,7 +1,7 @@
 ExternalProject_Add(ceeaus
   SOURCE_DIR ${meta_BINARY_DIR}/../../data/ceeaus
   DOWNLOAD_DIR ${meta_BINARY_DIR}/downloads
-  URL https://meta-toolkit.org/data/2016-01-26/ceeaus.tar.gz
+  URL https://web.archive.org/web/20220616030242if_/https://meta-toolkit.org/data/2016-01-26/ceeaus.tar.gz 
   URL_HASH "SHA256=83616fe13563786a1a6701f40ee0dc044bf32d1273e0ad53ca72582a90bed9ef"
   CONFIGURE_COMMAND ""
   BUILD_COMMAND ""
