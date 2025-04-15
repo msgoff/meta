@@ -2,6 +2,7 @@
  * @file multinomial.tcc
  * @author Chase Geigle
  */
+#include <stdexcept>
 
 #include <random>
 #include <unordered_map>

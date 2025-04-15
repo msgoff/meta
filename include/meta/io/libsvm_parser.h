@@ -13,7 +13,7 @@
 #include <string>
 #include <utility>
 #include <vector>
-
+#include <stdexcept>
 #include "meta/config.h"
 #include "meta/meta.h"
 

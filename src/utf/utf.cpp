@@ -11,11 +11,12 @@
 #include <unicode/unistr.h>
 #include <unicode/utf8.h>
 #include <unicode/translit.h>
-
 #include "detail.h"
 #include "meta/util/pimpl.tcc"
 #include "meta/utf/utf.h"
-
+#include <unicode/utypes.h>
+#include <stdbool.h>
+#include <iostream>
 namespace meta
 {
 namespace utf
@@ -26,6 +27,7 @@ void utf8_append_codepoint(std::string& dest, int32_t codepoint)
 {
     std::array<uint8_t, U8_MAX_LENGTH> buf;
     int32_t len = 0;
+    //TODO mike fix
     UBool err = FALSE;
     // ICU has some conversions within this macro, which we can't control
 #pragma GCC diagnostic push
