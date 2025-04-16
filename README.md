@@ -678,9 +678,8 @@ system.
    [Appveyor][appveyor] for Windows), so we can be fairly certain that
    things should build on nearly all major platforms.
 
-[homebrew]: http://brew.sh
 [forum]: https://forum.meta-toolkit.org
 [travis-ci]: https://travis-ci.org/meta-toolkit/meta
 [appveyor]: https://ci.appveyor.com/project/skystrife/meta
-[meta-website]: https://meta-toolkit.org
-[doxygen]: https://meta-toolkit.org/doxygen/namespaces.html
+[meta-website]: https://web.archive.org/web/20160416090805/https://meta-toolkit.org/
+[doxygen]: https://web.archive.org/web/20160416090805/https://meta-toolkit.org/doxygen/namespaces.html
