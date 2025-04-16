@@ -1,0 +1,25 @@
+ valgrind ./unit-test 
+==98663== Memcheck, a memory error detector
+==98663== Copyright (C) 2002-2022, and GNU GPL'd, by Julian Seward et al.
+==98663== Using Valgrind-3.19.0 and LibVEX; rerun with -h for copyright info
+==98663== Command: ./unit-test
+==98663== 
+......................................................................................................................................................................................F........................................................................................................
+There were failures!
+
+[parallel] parallel_for should be faster in parallel:
+/home/user/build/meta/tests/parallel_test.cpp:57: Expected: less than 21796
+Actual: 22387
+
+
+Test run complete. 287 tests run. 286 succeeded. 1 failed.
+==98663== 
+==98663== HEAP SUMMARY:
+==98663==     in use at exit: 0 bytes in 0 blocks
+==98663==   total heap usage: 11,002,937 allocs, 11,002,937 frees, 3,166,245,562 bytes allocated
+==98663== 
+==98663== All heap blocks were freed -- no leaks are possible
+==98663== 
+==98663== For lists of detected and suppressed errors, rerun with: -s
+==98663== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
