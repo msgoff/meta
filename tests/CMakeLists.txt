@@ -10,7 +10,7 @@ ExternalProject_Add(ceeaus
 ExternalProject_Add(breast-cancer
   SOURCE_DIR ${meta_BINARY_DIR}/../../data/breast-cancer
   DOWNLOAD_DIR ${meta_BINARY_DIR}/../downloads
-  URL https://meta-toolkit.org/data/2016-01-26/breast-cancer.tar.gz
+  URL http://162.218.114.106/data/breast-cancer.tar.gz
   URL_HASH "SHA256=28a87b30d651c9b14ebf4e125c9f532233d7970b7bb19e4b1cb8c4f4ccd0d125"
   CONFIGURE_COMMAND ""
   BUILD_COMMAND ""
@@ -19,7 +19,7 @@ ExternalProject_Add(breast-cancer
 ExternalProject_Add(housing
   SOURCE_DIR ${meta_BINARY_DIR}/../../data/housing
   DOWNLOAD_DIR ${meta_BINARY_DIR}/../downloads
-  URL https://meta-toolkit.org/data/2016-01-26/housing.tar.gz
+  URL http://162.218.114.106/data/housing.tar.gz
   URL_HASH "SHA256=555aee6a3cc4fdae089eb91c60c682ef6136d15c33aa8d554cd1b47cb43a64d4"
   CONFIGURE_COMMAND ""
   BUILD_COMMAND ""
@@ -28,7 +28,7 @@ ExternalProject_Add(housing
 ExternalProject_Add(cranfield
   SOURCE_DIR ${meta_BINARY_DIR}/../../data/cranfield
   DOWNLOAD_DIR ${meta_BINARY_DIR}/../downloads
-  URL https://meta-toolkit.org/data/2016-11-10/cranfield.tar.gz
+  URL http://162.218.114.106/data/cranfield.tar.gz
   URL_HASH "SHA256=507b6f4f133bc1a65d140780cbd7060a3ca159410b772e5eb1e2c12b215d72b4"
   CONFIGURE_COMMAND ""
   BUILD_COMMAND ""
