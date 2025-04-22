@@ -5,15 +5,12 @@
 
 #include "meta/classify/classifier/binary_classifier.h"
 
-namespace meta
-{
-namespace classify
-{
+namespace meta {
+namespace classify {
 
-bool binary_classifier::classify(const feature_vector& instance) const
-{
-    auto prediction = predict(instance);
-    return prediction >= 0;
+bool binary_classifier::classify(const feature_vector& instance) const {
+  auto prediction = predict(instance);
+  return prediction >= 0;
 }
-}
-}
+}  // namespace classify
+}  // namespace meta

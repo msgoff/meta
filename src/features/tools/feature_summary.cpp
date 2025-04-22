@@ -7,6 +7,8 @@
  * project.
  */
 
+#include <iostream>
+
 #include "cpptoml.h"
 #include "meta/classify/multiclass_dataset.h"
 #include "meta/classify/multiclass_dataset_view.h"
@@ -17,41 +19,37 @@
 #include "meta/parser/analyzers/tree_analyzer.h"
 #include "meta/sequence/analyzers/ngram_pos_analyzer.h"
 #include "meta/util/shim.h"
-#include <iostream>
 
 using namespace meta;
 
-int main(int argc, char* argv[])
-{
-    if (argc != 2)
-    {
-        std::cerr << "Usage:\t" << argv[0] << " config.toml" << std::endl;
-        return 1;
-    }
+int main(int argc, char* argv[]) {
+  if (argc != 2) {
+    std::cerr << "Usage:\t" << argv[0] << " config.toml" << std::endl;
+    return 1;
+  }
 
-    logging::set_cerr_logging();
+  logging::set_cerr_logging();
 
-    // Register additional analyzers
-    parser::register_analyzers();
-    sequence::register_analyzers();
+  // Register additional analyzers
+  parser::register_analyzers();
+  sequence::register_analyzers();
 
-    auto config = cpptoml::parse_file(argv[1]);
-    auto feature_config = config->get_table("features");
-    if (!feature_config)
-    {
-        std::cerr << "Missing [features] config table" << std::endl;
-        return 1;
-    }
+  auto config = cpptoml::parse_file(argv[1]);
+  auto feature_config = config->get_table("features");
+  if (!feature_config) {
+    std::cerr << "Missing [features] config table" << std::endl;
+    return 1;
+  }
 
-    auto f_idx = index::make_index<index::memory_forward_index>(*config);
+  auto f_idx = index::make_index<index::memory_forward_index>(*config);
 
-    classify::multiclass_dataset dset{f_idx};
-    classify::multiclass_dataset_view dset_vw(dset);
+  classify::multiclass_dataset dset{f_idx};
+  classify::multiclass_dataset_view dset_vw(dset);
 
-    auto selector = features::make_selector(*config, dset_vw);
+  auto selector = features::make_selector(*config, dset_vw);
 
-    selector->select(100);
-    selector->print_summary(f_idx, 10);
+  selector->select(100);
+  selector->print_summary(f_idx, 10);
 
-    return 0;
+  return 0;
 }

@@ -3,46 +3,31 @@
  * @author Chase Geigle
  */
 
-#include <cmath>
 #include "meta/stats/running_stats.h"
 
-namespace meta
-{
-namespace stats
-{
+#include <cmath>
 
-running_stats::running_stats() : m_k_{0.0}, s_k_{0.0}, num_items_{0}
-{
-    // nothing
-}
+namespace meta {
+namespace stats {
 
-void running_stats::add(double value)
-{
-    ++num_items_;
-    auto old_m_k = m_k_;
-
-    m_k_ += (value - old_m_k) / num_items_;
-    s_k_ += (value - m_k_) * (value - old_m_k);
+running_stats::running_stats() : m_k_{0.0}, s_k_{0.0}, num_items_{0} {
+  // nothing
 }
 
-double running_stats::mean() const
-{
-    return m_k_;
+void running_stats::add(double value) {
+  ++num_items_;
+  auto old_m_k = m_k_;
+
+  m_k_ += (value - old_m_k) / num_items_;
+  s_k_ += (value - m_k_) * (value - old_m_k);
 }
 
-double running_stats::stddev() const
-{
-    return std::sqrt(variance());
-}
+double running_stats::mean() const { return m_k_; }
 
-double running_stats::variance() const
-{
-    return s_k_ / (num_items_ - 1);
-}
+double running_stats::stddev() const { return std::sqrt(variance()); }
 
-std::size_t running_stats::size() const
-{
-    return num_items_;
-}
-}
-}
+double running_stats::variance() const { return s_k_ / (num_items_ - 1); }
+
+std::size_t running_stats::size() const { return num_items_; }
+}  // namespace stats
+}  // namespace meta
